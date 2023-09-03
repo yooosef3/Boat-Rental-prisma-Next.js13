@@ -1,0 +1,25 @@
+"use client";
+
+import Image from "next/image";
+import React from "react";
+
+interface SlideProps {
+  imageSource: any;
+}
+const Slide: React.FC<SlideProps> = ({ imageSource }) => {
+  return (
+    <div className="keen-slider__slide">
+      <div>
+        <Image
+          className="w-full rounded-t-md"
+          alt="slide"
+          src={imageSource}
+          width={400}
+          height={300}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Slide;
