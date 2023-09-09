@@ -31,7 +31,7 @@ const Top = () => {
         <Title title="آخرین خبرها" />
         <ul>
           {links.map((link) => (
-            <li className="text-white hover:text-[#BFA98C] cursor-pointer mb-1 duration-200" key={link.id}>{link.name}</li>
+            <li className="text-slate-300 hover:text-[#BFA98C] cursor-pointer mb-2 duration-200" key={link.id}>{link.name}</li>
           ))}
         </ul>
       </div>

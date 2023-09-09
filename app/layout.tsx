@@ -1,6 +1,5 @@
 import "./globals.css";
 
-import ClientOnly from "./_components/ClientOnly";
 import Footer from "./_components/footer/Footer";
 import type { Metadata } from "next";
 import Navbar from "./_components/Navbar/Navbar";
@@ -17,14 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="max-w-[2520px] mx-auto">
-        <ClientOnly>
-          <Navbar />
-        </ClientOnly>
+      <body className="max-w-[2520px] mx-auto bg-slate-50">
+        <Navbar />
         <div>{children}</div>
-        <ClientOnly>
-          <Footer />
-        </ClientOnly>
       </body>
     </html>
   );

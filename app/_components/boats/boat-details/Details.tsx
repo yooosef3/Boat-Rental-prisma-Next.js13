@@ -1,10 +1,12 @@
+"use client"
+
 import Info from './Info';
 import React from 'react';
 import Sidebar from './Sidebar';
 
 const Details = () => {
     return (
-        <div className='section grid grid-cols-1 lg:grid-cols-3'>
+        <div className='section grid grid-cols-1 lg:grid-cols-3 gap-14'>
             <Info />
             <Sidebar />
         </div>

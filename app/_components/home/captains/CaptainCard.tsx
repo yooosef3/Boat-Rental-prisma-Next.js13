@@ -13,8 +13,8 @@ interface CaptainProps {
 }
 const CaptainCard: React.FC<CaptainProps> = ({ id, name, role, image }) => {
   return (
-    <div className="group w-full  overflow-hidden rounded-md shadow-md group hover:shadow-lg duration-300">
-      <div className="h-[250px]  overflow-hidden">
+    <div className="group w-full overflow-hidden rounded-md shadow-md group hover:shadow-lg duration-300">
+      <div className="h-[250px] overflow-hidden">
         <Image
           className="w-full rounded-md h-full object-cover group-hover:scale-105 duration-500"
           alt={name}

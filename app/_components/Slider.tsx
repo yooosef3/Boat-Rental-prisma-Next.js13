@@ -53,7 +53,7 @@ export default function Slider() {
       ref={ref}
       className="keen-slider relative group-hover:opacity-90 duration-300 cursor-pointer"
     >
-      <div className="absolute inset-4 z-50">
+      <div className="absolute inset-4 z-40">
         <div className="flex items-center justify-between">
           <div className="text-white text-2xl">
             <AiTwotoneHeart />
