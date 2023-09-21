@@ -1,4 +1,4 @@
-import Boats from '../_components/boats/Boats';
+import Boats from '@/components/boats/Boats';
 import React from 'react';
 
 const BoatsList = () => {
