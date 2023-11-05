@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { useEffect } from 'react';
 
 interface RegisterModalStore {
   isOpen: boolean;
@@ -11,6 +12,7 @@ const useRegisterModal = create<RegisterModalStore>((set) => ({
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false })
 }));
+
 
 
 export default useRegisterModal;

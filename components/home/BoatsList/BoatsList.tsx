@@ -4,11 +4,12 @@ import Boats from './Boats';
 import React from 'react';
 import SectionInfo from './SectionInfo';
 
-const BoatsList = () => {
+const BoatsList = ({boats}:any) => {
+    
     return (
         <div className='section'>
             <SectionInfo />
-            <Boats />
+            <Boats data={boats}/>
         </div>
     );
 };

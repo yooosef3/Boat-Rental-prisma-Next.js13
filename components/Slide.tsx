@@ -9,9 +9,9 @@ interface SlideProps {
 const Slide: React.FC<SlideProps> = ({ imageSource }) => {
   return (
     <div className="keen-slider__slide">
-      <div>
+      <div className="h-[300px]">
         <Image
-          className="w-full rounded-t-md"
+          className="w-full h-full rounded-t-md"
           alt="slide"
           src={imageSource}
           width={400}

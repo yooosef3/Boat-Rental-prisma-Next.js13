@@ -3,20 +3,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import user from "../../../public/images/boat/owner.jpeg";
+import { SafeUser } from "@/app/types";
 
-const Owner = () => {
+interface ListingInfoProps {
+  user: SafeUser | null;
+}
+const Owner: React.FC<ListingInfoProps> = ({ user }) => {
+  if (!user) return null;
   return (
     <div className="bg-[#BFA888] py-10 flex flex-col lg:flex-row gap-7 lg:items-center lg:gap-14 px-10 lg:px-32">
       <Image
         className="rounded-full border-4 border-[#937240] w-[150px] h-[150px]"
         alt="owner"
-        src={user}
+        src={user?.image}
         width={1000}
         height={1000}
       />
       <div className="text-white">
-        <h2 className="text-5xl medium mb-4">Luca Foggia</h2>
+        <h2 className="text-5xl medium mb-4">{user?.name}</h2>
         <p className="">
           از شما برای بررسی قایق های من متشکرم! من بسیار منظم هستم و یک آپارتمان
           بسیار تمیز نگه دارم. من عاشق سفر، ملاقات و تعامل با افراد جدید از نقاط

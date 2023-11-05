@@ -4,18 +4,18 @@ import { useCallback, useContext } from "react";
 
 import { NavbarContext } from "../Navbar";
 import useLoginModal from "@/hooks/useLoginModal";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const BoatSubmit = () => {
-  const path = usePathname();
   const { currentUser } = useContext(NavbarContext);
   const loginModal = useLoginModal();
-
+  const router = useRouter();
   const rentHandler = useCallback(() => {
     if (!currentUser) {
       return loginModal.onOpen();
     }
-  }, [currentUser, loginModal]);
+    router.push('/submit-boat')
+  }, [currentUser, loginModal, router]);
   
   return (
     <div

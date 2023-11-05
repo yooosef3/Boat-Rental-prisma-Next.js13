@@ -8,6 +8,13 @@
   }
 }
 
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
+
 [class^="number-slide"],
 [class*=" number-slide"] {
   display: flex;
@@ -88,100 +95,125 @@
   background-color: #fff;
 }
 
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  font-size: 16px !important;
+  width: 100% !important;
+}
+
 @font-face {
-  font-family: 'YekanBakhLight';
+  font-family: "YekanBakhLight";
   font-style: normal;
   font-weight: 300;
   src: url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Light/YekanBakh-Light.ttf")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'YekanBakhRegular';
+  font-family: "YekanBakhRegular";
   font-style: normal;
   font-weight: 400;
   src: url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Regular/YekanBakh-Regular.ttf")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'YekanBakhMedium';
+  font-family: "YekanBakhMedium";
   font-style: normal;
   font-weight: 500;
   src: url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Medium/YekanBakh-Medium.ttf")
+      format("truetype");
 }
 
-
-
 @font-face {
-  font-family: 'YekanBakhBold';
+  font-family: "YekanBakhBold";
   font-style: normal;
   font-weight: 700;
   src: url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Bold/YekanBakh-Bold.ttf")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'YekanBakhHeavy';
+  font-family: "YekanBakhHeavy";
   font-style: normal;
   font-weight: 800;
   src: url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Heavy/YekanBakh-Heavy.ttf")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'YekanBakhFat';
+  font-family: "YekanBakhFat";
   font-style: normal;
   font-weight: 900;
   src: url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.eot");
-  src: url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.eot?#iefix") format("embedded-opentype"),
+  src: url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-8 */
-    url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.woff") format("woff"),
+      url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.woff")
+      format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-    url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.ttf") format("truetype");
+      url("../public/fonts/YekanBakh/YekanBakh-Fat/YekanBakh-Fat.ttf")
+      format("truetype");
 }
 
 body {
-  font-family: 'YekanBakhRegular';
+  font-family: "YekanBakhRegular";
 }
 
 body .light {
-  font-family: 'YekanBakhLight'
+  font-family: "YekanBakhLight";
 }
 
 body .medium {
-  font-family: 'YekanBakhMedium'
+  font-family: "YekanBakhMedium";
 }
 
 body .bold {
-  font-family: 'YekanBakhBold'
+  font-family: "YekanBakhBold";
 }
 
 body .heavy {
-  font-family: 'YekanBakhHeavy'
+  font-family: "YekanBakhHeavy";
 }
 
 body .fat {
-  font-family: 'YekanBakhFat'
+  font-family: "YekanBakhFat";
 }

@@ -17,9 +17,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   const currentUser = await getCurrentUser();
   
+
   return (
     <html lang="fa" dir="rtl">
       <body className="max-w-[2520px] mx-auto bg-slate-50">

@@ -9,14 +9,15 @@ import React from 'react';
 interface ReserveProps {
     toggle?: boolean
     setToggle?: any
+    price?: string
 }
-const MobileReserve:React.FC<ReserveProps> = ({toggle, setToggle}) => {
+const MobileReserve:React.FC<ReserveProps> = ({toggle, setToggle, price}) => {
     return (
         <div className={`${toggle ? 'fixed inset-x-5 top-28 lg:hidden' : 'hidden'} bg-white p-5 h-fit rounded-md shadow-md z-10`}>
             <span onClick={()=> setToggle(false)} className='text-white rounded-lg px-2 pt-2 bg-[#BFA888] hover:bg-red-600 duration-200 w-24 h-16 cursor-pointer'>X</span>
           <div className='mt-5'>
           <h3 className="bg-[#BFA888] text-white text-xl medium text-center w-full py-3 rounded">
-            هر شب 500 دلار
+            هر شب {price} دلار
           </h3>
           <div className="mt-5 rounded p-5 bg-white">
             <h3 className="text-lg mb-3 text-slate-900 bold">الان رزرو کن</h3>

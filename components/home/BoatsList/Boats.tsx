@@ -4,25 +4,18 @@ import BoatCard from "./BoatCard";
 import React from "react";
 
 interface BoatsProps {
-  boats?: boolean;
+  data?: boolean;
 }
-const Boats: React.FC<BoatsProps> = ({ boats }) => {
+const Boats: React.FC<BoatsProps> = ({ data }) => {
+  
   return (
-    <div
-      className={`grid gap-5 ${
-        boats ? "lg:grid-cols-2" : 'lg:grid-cols-3'
-      } grid-cols-1 `}
-    >
-      <BoatCard />
-      <BoatCard />
-      <BoatCard />
-      <BoatCard />
-      {!boats && (
-        <>
-          <BoatCard />
-          <BoatCard />
-        </>
-      )}
+    <div className={`grid gap-5 md:grid-cols-2 lg:grid-cols-3 grid-cols-1 `}>
+      {
+        //@ts-ignore
+        data?.map((boat) => (
+          <BoatCard key={boat.id} data={boat} />
+        ))
+      }
     </div>
   );
 };

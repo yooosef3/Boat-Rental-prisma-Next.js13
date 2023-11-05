@@ -49,15 +49,17 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     );
 
   return (
-    <div
-      className={`flex fixed top-0 inset-x-0 z-30 justify-between items-center  medium p-5 px-10 lg:px-20 xl:px-32 lg:bg-white text-white lg:text-slate-900 shadow-md bg-[#282D33] `}
-    >
-      <MobileUser />
-      <Enter />
-      <Logo />
-      <MenuLinks />
-      <MenuButton />
-    </div>
+    <NavbarContext.Provider value={{ navbar, currentUser }}>
+      <div
+        className={`flex fixed top-0 inset-x-0 z-30 justify-between items-center  medium p-5 px-10 lg:px-20 xl:px-32 lg:bg-white text-white lg:text-slate-900 shadow-md bg-[#282D33] `}
+      >
+        <MobileUser />
+        <Enter />
+        <Logo />
+        <MenuLinks />
+        <MenuButton />
+      </div>
+    </NavbarContext.Provider>
   );
 };
 

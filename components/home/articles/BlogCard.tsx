@@ -24,7 +24,7 @@ const BlogCard: React.FC<BlogProps> = ({
         <div className="absolute left-3 bottom-3 z-20 text-xs text-white medium">{published}</div>
         <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-20 duration-200"></div>
         <Image
-          className="w-full rounded-md h-full object-cover"
+          className="w-full rounded-t-md h-full object-cover"
           alt={title}
           src={image}
           width={300}
