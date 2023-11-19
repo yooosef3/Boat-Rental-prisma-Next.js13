@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react';
 import {signOut} from 'next-auth/react'
 
@@ -11,9 +12,26 @@ const Logged = ({toggle}:LoggedProps) => {
             toggle ? "block" : "hidden"
           }`}
         >
+          <Link href='/dashboard'>
           <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
             حساب من
           </h3>
+          </Link>
+          <Link href='/dashboard/favorite'>
+          <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
+            لیست من
+          </h3>
+          </Link>
+          <Link href='/dashboard/favorites'>
+          <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
+            مورد علاقه ها
+          </h3>
+          </Link>
+          <Link href='/dashboard'>
+          <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
+            رزرو شده ها
+          </h3>
+          </Link>
           <hr className="border"/>
           <h3
             onClick={() => signOut()}
