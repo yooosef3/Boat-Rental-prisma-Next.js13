@@ -1,4 +1,4 @@
-import ListingItem from "@/components/dashboard/mylisting/ListingItem";
+import ListingItem from "@/components/dashboard/ListingItem";
 import React from "react";
 import ReserveItem from "@/components/dashboard/reserves/ReserveItem";
 

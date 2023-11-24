@@ -19,6 +19,7 @@ interface BoatProps {
   currentUser?: SafeUser | null;
 }
 const BoatCard: React.FC<BoatProps> = ({ data, currentUser }) => {
+  
   const { getByValue } = useCountries();
   const router = useRouter();
   const location = getByValue(data.locationValue);
@@ -28,10 +29,7 @@ const BoatCard: React.FC<BoatProps> = ({ data, currentUser }) => {
   const imageSrc = data.imageSrc;
 
   return (
-    <div
-      onClick={() => router.push(`/boats/${data?.id}`)}
-      className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300"
-    >
+    <div className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300">
       <Slider
         imageSrc={imageSrc}
         price={price}
@@ -47,7 +45,10 @@ const BoatCard: React.FC<BoatProps> = ({ data, currentUser }) => {
           <BiSolidStar />
         </div>
         <div>
-          <h3 className="text-[#0A1B40] cursor-pointer w-fit group-hover:text-[#D0AF8C] duration-300 semibold text-xl mb-3">
+          <h3
+            onClick={() => router.push(`/boats/${data?.id}`)}
+            className="text-[#0A1B40] cursor-pointer w-fit group-hover:text-[#D0AF8C] duration-300 semibold text-xl mb-3"
+          >
             {data.title}
           </h3>
           <div className="flex text-gray-500 mb-1 items-center gap-1">

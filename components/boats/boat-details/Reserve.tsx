@@ -66,7 +66,7 @@ const Reserve = () => {
       .then(() => {
         toast.success("رزرو شد!");
         setDateRange(initialDateRange);
-        // router.push("/trips");
+        router.push("/dashboard/trips");
       })
       .catch(() => {
         toast.error("مشکلی رخ داده است!");
@@ -90,7 +90,11 @@ const Reserve = () => {
   return (
     <div className="hidden lg:block">
       <h3 className="bg-[#BFA888] text-white text-xl medium text-center w-full py-3 rounded">
-        هر شب {price.toLocaleString().replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])} دلار
+        هر شب{" "}
+        {price
+          .toLocaleString()
+          .replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])}{" "}
+        دلار
       </h3>
       <div className="mt-5 rounded p-5 bg-white shadow-md">
         <div className="pr-4 my-4 h-14 w-full bg-white shadow-sm rounded-md flex items-center border gap-4">
@@ -106,7 +110,10 @@ const Reserve = () => {
         <div className="p-4 my-4 h-14 w-full bg-white shadow-sm rounded-md flex items-center justify-between border">
           <h3 className="text-gray-500">قیمت کل:</h3>
           <h3 className="text-gray-700 bold">
-            {(totalPrice).toLocaleString().replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])} دلار
+            {totalPrice
+              .toLocaleString()
+              .replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])}{" "}
+            دلار
           </h3>
         </div>
       </div>

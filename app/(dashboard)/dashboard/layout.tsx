@@ -12,7 +12,7 @@ export default function DashboardLayout({
     <div className="max-w-[2520px] mx-auto bg-slate-50">
       <ToasterProvider />
       <div className="grid grid-cols-1 pt-28 section md:grid-cols-8 md:gap-8">
-        <div className="col-span-2 sticky top-28 h-fit">
+        <div className="col-span-2 md:sticky md:top-28 h-fit">
           <Sidebar />
         </div>
         <div className="col-span-6">{children}</div>

@@ -2,14 +2,14 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { FaFolderOpen } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
 import Image from "next/image";
 import { IoLocationSharp } from "react-icons/io5";
-import { MdDashboard } from "react-icons/md";
 import React from "react";
 import user from '@/public/images/boat/user.jpeg'
 
 const items = [
-  { id: 1, slug: "", name: "داشبورد", link: "/", icon: <MdDashboard /> },
+  { id: 1, slug: "/", name: "خانه", link: "/", icon: <FaHome /> },
   {
     id: 2,
     slug: "/dashboard/favorites",
@@ -19,9 +19,9 @@ const items = [
   },
   {
     id: 3,
-    slug: "/dashboard/mylisting",
-    name: "لیست من",
-    link: "/dashboard/mylisting",
+    slug: "/dashboard/trips",
+    name: "سفرهای من",
+    link: "/dashboard/trips",
     icon: <IoLocationSharp />,
   },
   {
