@@ -4,30 +4,31 @@ import { signOut } from "next-auth/react";
 
 interface LoggedProps {
   toggle: boolean;
+  setToggle: any;
 }
-const Logged = ({ toggle }: LoggedProps) => {
+const Logged = ({ toggle, setToggle }: LoggedProps) => {
   return (
     <div
       className={`absolute text-slate-800 overflow-hidden bg-white top-10 inset-x-0 w-28 rounded-md shadow-md ${
         toggle ? "block" : "hidden"
       }`}
     >
-      <Link href="/dashboard/favorites">
+      <Link onClick={()=> setToggle(false)} href="/dashboard/favorites">
         <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
           حساب من
         </h3>
       </Link>
-      <Link href="/dashboard/trips">
+      <Link onClick={()=> setToggle(false)} href="/dashboard/trips">
         <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
           سفرهای من
         </h3>
       </Link>
-      <Link href="/dashboard/favorites">
+      <Link onClick={()=> setToggle(false)} href="/dashboard/favorites">
         <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
           مورد علاقه ها
         </h3>
       </Link>
-      <Link href="/dashboard/reserves">
+      <Link onClick={()=> setToggle(false)} href="/dashboard/reservations">
         <h3 className="cursor-pointer pt-2 hover:bg-slate-100 duration-200 pr-3">
           رزرو شده ها
         </h3>

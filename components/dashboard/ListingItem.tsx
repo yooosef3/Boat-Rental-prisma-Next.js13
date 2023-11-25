@@ -6,7 +6,6 @@ import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { format } from "date-fns";
-import pic from "../../public/images/boat/yacht1.jpeg";
 import useCountries from "@/hooks/useCountries";
 import { useRouter } from "next/navigation";
 

@@ -26,9 +26,9 @@ const items = [
   },
   {
     id: 4,
-    slug: "/dashboard/reserves",
+    slug: "/dashboard/reservations",
     name: "رزرو شده",
-    link: "/dashboard/reserves",
+    link: "/dashboard/reservations",
     icon: <FaFolderOpen />,
   },
 ];
@@ -46,9 +46,9 @@ const Sidebar = () => {
         <div
           onClick={() => router.push(item.link)}
           key={item.id}
-          className={`flex group hover:bg-slate-100 ${
+          className={`flex group hover:bg-slate-200 ${
             pathname === item.slug
-              ? "bg-slate-100 text-[#998363]"
+              ? "bg-slate-200 text-[#998363]"
               : "text-gray-700"
           } p-2 rounded-md cursor-pointer items-center gap-3`}
         >

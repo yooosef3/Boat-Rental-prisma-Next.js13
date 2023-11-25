@@ -33,7 +33,7 @@ const Enter = () => {
                 {currentUser?.name}
               </h3>
             </div>
-            <Logged toggle={toggle} />
+            <Logged setToggle={setToggle} toggle={toggle} />
           </div>
         </>
       ) : (

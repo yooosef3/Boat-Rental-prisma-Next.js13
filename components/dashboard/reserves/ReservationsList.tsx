@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { SafeReservation, SafeUser } from "@/app/types";
 
 import ListingItem from "../ListingItem";
@@ -8,11 +8,14 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-interface TripsProps {
+interface ReservationsProps {
   reservations: SafeReservation[];
   currentUser?: SafeUser | null;
 }
-const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
+const ReservationsList: React.FC<ReservationsProps> = ({
+  reservations,
+  currentUser,
+}) => {
   const router = useRouter();
   const [deletingId, setDeletingId] = useState("");
   const onCancel = useCallback(
@@ -21,11 +24,11 @@ const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
       axios
         .delete(`/api/reservations/${id}`)
         .then(() => {
-          toast.success("رزرو شما لغو شد!");
+          toast.success("رزرو لغو شد!");
           router.refresh();
         })
         .catch(() => {
-          toast.error("خطایی رخ داده است!");
+          toast.error("مشکلی رخ داده است!");
         })
         .finally(() => {
           setDeletingId("");
@@ -33,12 +36,9 @@ const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
     },
     [router]
   );
-  useEffect(() => {
-    router.refresh();
-  }, [reservations.length]);
   return (
-    <div>
-      <h3 className="text-gray-800 text-xl bold m-4">سفرهای من</h3>
+    <>
+      <h3 className="text-gray-800 text-xl bold m-4">رزرو شده</h3>
       <div className="bg-white flex items-center justify-start gap-5 flex-wrap rounded-md shadow-md p-5">
         {reservations.map((reservation): any => (
           <ListingItem
@@ -48,13 +48,13 @@ const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
             actionId={reservation.id}
             onAction={onCancel}
             disabled={deletingId === reservation.id}
-            actionLabel="لغو رزرو"
+            actionLabel="لغو رزرو مهمان"
             currentUser={currentUser}
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
-export default TripsList;
+export default ReservationsList;

@@ -7,7 +7,7 @@ import { DateRange, Range, RangeKeyDict } from "react-date-range";
 
 interface DatePickerProps {
   value: Range;
-  onChange: (value: RangeKeyDict) => void;
+  onChange?: (value: RangeKeyDict) => void;
   disabledDates?: Date[];
 }
 const DatePicker: React.FC<DatePickerProps> = ({

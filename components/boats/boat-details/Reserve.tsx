@@ -12,9 +12,7 @@ import { differenceInDays, eachDayOfInterval } from "date-fns";
 
 import Button from "../../Button";
 import Calendar from "@/components/inputs/Calendar";
-import { FaUser } from "react-icons/fa6";
 import { IoCalendar } from "react-icons/io5";
-import Link from "next/link";
 import axios from "axios";
 import toast from "react-hot-toast";
 import useLoginModal from "@/hooks/useLoginModal";
