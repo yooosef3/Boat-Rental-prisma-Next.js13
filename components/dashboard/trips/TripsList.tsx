@@ -39,7 +39,7 @@ const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
   return (
     <div>
       <h3 className="text-gray-800 text-xl bold m-4">سفرهای من</h3>
-      <div className="bg-white flex items-center justify-start gap-5 flex-wrap rounded-md shadow-md p-5">
+      <div className="bg-white flex flex-col md:flex-row items-center justify-start gap-5 flex-wrap rounded-md shadow-md p-5">
         {reservations.map((reservation): any => (
           <ListingItem
             key={reservation.id}

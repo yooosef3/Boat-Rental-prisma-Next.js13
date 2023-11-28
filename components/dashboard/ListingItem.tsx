@@ -63,7 +63,7 @@ const ListingItem: React.FC<ListingItemProps> = ({
   }, [reservation]);
 
   return (
-    <div className="bg-gray-100 p-3 w-[285px] rounded-md border">
+    <div onClick={()=> router.push(`/boats/${data.id}`)} className="bg-gray-100 p-3 w-[285px] md:w-[288px] rounded-md border">
       <div className="w-full h-44 relative overflow-hidden rounded-md">
         <Image
           alt="listing"
@@ -73,7 +73,7 @@ const ListingItem: React.FC<ListingItemProps> = ({
         />
       </div>
       <div className="pt-3">
-        <h2 className="bold text-gray-700">
+        <h2 onClick={()=> router.push(`/boats/${data.id}`)} className="bold text-gray-700 hover:text-[#8C7552] duration-300 cursor-pointer">
           {location?.region}, {location?.label}
         </h2>
         <h2 className="medium text-gray-400 my-2">{reservationDate}</h2>

@@ -14,11 +14,12 @@ interface BoatProps {
   data: SafeListing;
   onAction?: (id: string) => void;
   disabled?: boolean;
+  boats?: boolean;
   actionLabel?: string;
   actionId?: string;
   currentUser?: SafeUser | null;
 }
-const BoatCard: React.FC<BoatProps> = ({ data, currentUser }) => {
+const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats }) => {
   
   const { getByValue } = useCountries();
   const router = useRouter();
@@ -32,6 +33,7 @@ const BoatCard: React.FC<BoatProps> = ({ data, currentUser }) => {
     <div className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300">
       <Slider
         imageSrc={imageSrc}
+        boats={boats}
         price={price}
         id={data.id}
         currentUser={currentUser}

@@ -1,9 +1,13 @@
 import Boats from '@/components/boats/Boats';
 import React from 'react';
+import getCurrentUser from '../actions/getCurrentUser';
+import getListings from '../actions/getListings';
 
-const BoatsList = () => {
+const BoatsList = async () => {
+    const listings = await getListings();
+    const currentUser = await getCurrentUser();
     return (
-        <Boats />
+        <Boats boats = {listings} currentUser={currentUser}/>
     );
 };
 

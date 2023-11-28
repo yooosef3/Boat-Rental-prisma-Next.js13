@@ -13,7 +13,7 @@ const Trips = async () => {
     return (
       <>
         <h3 className="text-gray-800 text-xl bold m-4">سفرهای من</h3>
-        <div className="bg-white flex flex-col items-center justify-center gap-5 flex-wrap rounded-md shadow-md p-5">
+        <div className="bg-white flex flex-col items-center justify-center gap-5 flex-wrap rounded-md shadow-md h-[86%] p-5">
           <h2 className="text-gray-800 text-lg bold">سفری یافت نشد!</h2>
           <h3 className="text-sm text-gray-600">ظاهرا سفری رزرو نکرده اید!</h3>
         </div>
