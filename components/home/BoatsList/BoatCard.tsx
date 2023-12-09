@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { SafeListing, SafeUser } from "@/app/types";
 
 import { BiSolidStar } from "react-icons/bi";
 import { GoHome } from "react-icons/go";
 import { MdLocationPin } from "react-icons/md";
 import Slider from "../../Slider";
+import { motion } from "framer-motion";
 import useCountries from "@/hooks/useCountries";
+import { useInView } from "framer-motion";
+import useLocation from "@/hooks/useLocation";
 import { useRouter } from "next/navigation";
 
 interface BoatProps {
@@ -20,17 +23,32 @@ interface BoatProps {
   currentUser?: SafeUser | null;
 }
 const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats }) => {
-  
   const { getByValue } = useCountries();
   const router = useRouter();
   const location = getByValue(data.locationValue);
+
+  const { setLocation }: any = useLocation();
   const price = useMemo(() => {
     return data.price;
   }, [data.price]);
   const imageSrc = data.imageSrc;
+  const centerHandler = () => {
+    setLocation(location?.latlng);
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   return (
-    <div className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+      transition={{ duration: 1, delay: isInView ? 0 : 0.5 }}
+      viewport={{once: true}}
+      onMouseMove={centerHandler}
+      className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300"
+    >
       <Slider
         imageSrc={imageSrc}
         boats={boats}
@@ -75,7 +93,7 @@ const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

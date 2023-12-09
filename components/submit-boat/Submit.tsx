@@ -16,6 +16,7 @@ import SubTitle from "./SubTitle";
 import Title from "./Title";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useConfettiStore } from "@/hooks/useConfettiStore";
 import { useRouter } from "next/navigation";
 
 const Submit = () => {
@@ -46,6 +47,7 @@ const Submit = () => {
   const roomCount = watch("roomCount");
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
+  const confetti = useConfettiStore();
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
@@ -61,6 +63,8 @@ const Submit = () => {
       .post("/api/listings", data)
       .then(() => {
         toast.success("لیست شما ساخته شد!");
+        window.scrollTo(0, 0);
+        confetti.onOpen();
         router.refresh();
         reset();
       })

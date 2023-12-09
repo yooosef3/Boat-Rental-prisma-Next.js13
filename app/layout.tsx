@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { ConfettiProvider } from "@/providers/ConfettiProvider";
 import LoginModal from "../components/modals/LoginModal";
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar/Navbar";
@@ -24,6 +25,7 @@ export default async function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="max-w-[2520px] mx-auto bg-slate-50">
         <ToasterProvider />
+        <ConfettiProvider />
         <RegisterModal />
         <LoginModal />
         <Navbar currentUser={currentUser} />

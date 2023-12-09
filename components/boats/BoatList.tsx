@@ -32,9 +32,10 @@ const filters = [
     options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
   },
 ];
-const BoatList = ({boats, currentUser}:any) => {
+const BoatList = ({  boats, currentUser }: any) => {
+
   return (
-    <div className="h-screen bg-[#F6F6F6] md:overflow-y-scroll py-8 px-5">
+    <div className="h-full bg-[#F6F6F6] md:overflow-y-scroll py-8 px-5">
       <input
         className="border mb-3 shadow rounded-md outline-none h-12 pr-5 w-full"
         type="text"
@@ -52,7 +53,7 @@ const BoatList = ({boats, currentUser}:any) => {
         <h2 className="bold text-xl mb-5 text-slate-900">
           یک قایق روی نقشه پیدا کن
         </h2>
-        <Boats boats data={boats} currentUser={currentUser}/>
+        <Boats boats data={boats} currentUser={currentUser} />
       </div>
     </div>
   );

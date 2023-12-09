@@ -1,3 +1,5 @@
+"use client"
+
 import { usePathname, useRouter } from "next/navigation";
 
 import { FaFolderOpen } from "react-icons/fa6";
@@ -6,7 +8,6 @@ import { FaHome } from "react-icons/fa";
 import Image from "next/image";
 import { IoLocationSharp } from "react-icons/io5";
 import React from "react";
-import user from '@/public/images/boat/user.jpeg'
 
 const items = [
   { id: 1, slug: "/", name: "خانه", link: "/", icon: <FaHome /> },
@@ -33,14 +34,14 @@ const items = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({user}:any) => {
   const router = useRouter();
   const pathname = usePathname();
   return (
     <div className="flex flex-col space-y-4 bg-white p-2 rounded-md shadow-md">
       <div className="flex border-b py-6 flex-col items-center gap-3">
-        <Image className="rounded-full" alt='user' src={user} width={90} height={90} />
-        <h2 className="text-gray-500">یوسف خدری</h2>
+        <Image className="rounded-full" alt='user' src={user.image} width={90} height={90} />
+        <h2 className="text-gray-500">{user.name}</h2>
       </div>
       {items.map((item) => (
         <div
