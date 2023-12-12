@@ -4,16 +4,34 @@ import Image, { StaticImageData } from "next/image";
 
 import { BiSolidStar } from "react-icons/bi";
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface CaptainProps {
   id: number;
   name: string;
   role: string;
+  index: number;
   image: StaticImageData;
 }
-const CaptainCard: React.FC<CaptainProps> = ({ id, name, role, image }) => {
+const CaptainCard: React.FC<CaptainProps> = ({ index, name, role, image }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+  const captainVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+  const animationDelay = 0.3;
   return (
-    <div className="group w-full overflow-hidden rounded-md shadow-md group hover:shadow-lg duration-300">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      variants={captainVariants}
+      animate={inView ? "visible" : "hidden"}
+      custom={index}
+      transition={{ delay: index * animationDelay, duration: 1 }}
+ className="group w-full overflow-hidden rounded-md shadow-md group hover:shadow-lg duration-300">
       <div className="h-[250px] overflow-hidden">
         <Image
           className="w-full rounded-md h-full object-cover group-hover:scale-105 duration-500"
@@ -36,7 +54,7 @@ const CaptainCard: React.FC<CaptainProps> = ({ id, name, role, image }) => {
         </h3>
         <p className="text-gray-600 text-sm medium">{role}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

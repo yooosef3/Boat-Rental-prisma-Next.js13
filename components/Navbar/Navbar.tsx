@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
         <div
           className={`flex fixed top-0 inset-x-0 z-50 justify-between items-center  medium p-5 px-10 lg:px-20 xl:px-32 ${
             navbar
-              ? "lg:bg-white lg:shadow-md lg:text-slate-900"
+              ? "lg:bg-slate-100 lg:shadow-md lg:text-slate-900"
               : " lg:bg-opacity-0 "
           } bg-[#282D33] text-white`}
         >

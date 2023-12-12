@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useRef } from "react";
+import React, { useMemo } from "react";
 import { SafeListing, SafeUser } from "@/app/types";
 
 import { BiSolidStar } from "react-icons/bi";
@@ -9,7 +9,7 @@ import { MdLocationPin } from "react-icons/md";
 import Slider from "../../Slider";
 import { motion } from "framer-motion";
 import useCountries from "@/hooks/useCountries";
-import { useInView } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import useLocation from "@/hooks/useLocation";
 import { useRouter } from "next/navigation";
 
@@ -18,15 +18,15 @@ interface BoatProps {
   onAction?: (id: string) => void;
   disabled?: boolean;
   boats?: boolean;
+  index: number;
   actionLabel?: string;
   actionId?: string;
   currentUser?: SafeUser | null;
 }
-const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats }) => {
+const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats, index }) => {
   const { getByValue } = useCountries();
   const router = useRouter();
   const location = getByValue(data.locationValue);
-
   const { setLocation }: any = useLocation();
   const price = useMemo(() => {
     return data.price;
@@ -35,17 +35,22 @@ const BoatCard: React.FC<BoatProps> = ({ data, currentUser, boats }) => {
   const centerHandler = () => {
     setLocation(location?.latlng);
   };
-
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+  const boatVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+  const animationDelay = 0.3;
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-      transition={{ duration: 1, delay: isInView ? 0 : 0.5 }}
-      viewport={{once: true}}
+      initial="hidden"
+      variants={boatVariants}
+      animate={inView ? "visible" : "hidden"}
+      custom={index}
+      transition={{ delay: index * animationDelay, duration: 1 }}
       onMouseMove={centerHandler}
       className="rounded-md shadow-md group hover:shadow-lg hover:shadow-[#8c755292] duration-300"
     >

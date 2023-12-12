@@ -23,8 +23,8 @@ const Captains = () => {
         description={desc}
       />
       <div className="flex flex-col md:flex-row items-center justify-center gap-5">
-        {captains.map((captain) => (
-          <CaptainCard key={captain.id} {...captain} />
+        {captains.map((captain, i) => (
+          <CaptainCard key={captain.id} index={i} {...captain} />
         ))}
       </div>
     </div>

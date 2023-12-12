@@ -2,16 +2,29 @@
 
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "@/libs/motion";
+import { useInView } from "react-intersection-observer";
 
 interface ServiceProps {
   image: any;
   title: string;
   info: string;
-  id: number;
+  index: number;
 }
-const ServiceCard: React.FC<ServiceProps> = ({ image, title, info, id }) => {
+const ServiceCard: React.FC<ServiceProps> = ({ image, title, info, index }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+  const animationDelay = 0.3;
   return (
-    <div className="grid grid-cols-1 md:grid-cols-5">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      variants={slideInFromBottom}
+      animate={inView ? "visible" : "hidden"}
+      custom={index}
+      transition={{ delay: index * animationDelay, duration: 1 }} className="grid grid-cols-1 md:grid-cols-5">
       <Image
         className="md:col-span-1 mx-auto"
         src={image}
@@ -23,7 +36,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ image, title, info, id }) => {
         <h2 className="text-[#0A1B40] mb-4 bold text-lg">{title}</h2>
         <p className="text-gray-500 max-w-md">{info}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

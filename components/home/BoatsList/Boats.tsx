@@ -17,13 +17,13 @@ const Boats: React.FC<BoatsProps> = ({ data, currentUser, boats }) => {
     <div className={`grid gap-5 md:grid-cols-2 ${!boats && 'lg:grid-cols-3'} grid-cols-1 `}>
       {!boats ? (
         //@ts-ignore
-        data?.slice(0,6).map((boat) => (
-          <BoatCard key={boat.id} boats={boats} data={boat} currentUser={currentUser} />
+        data?.slice(0,6).map((boat, index) => (
+          <BoatCard index={index} key={boat.id} boats={boats} data={boat} currentUser={currentUser} />
         ))
       ):(
         //@ts-ignore
-        data?.map((boat) => (
-          <BoatCard key={boat.id} boats={boats} data={boat} currentUser={currentUser} />
+        data?.map((boat, index) => (
+          <BoatCard index={index} key={boat.id} boats={boats} data={boat} currentUser={currentUser} />
         ))
       )}
     </div>

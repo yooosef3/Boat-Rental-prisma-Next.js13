@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { create } from "zustand";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import prisma from "@/libs/prismadb";
 

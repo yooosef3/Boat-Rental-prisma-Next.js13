@@ -8,7 +8,7 @@ const MenuLinks = () => {
   const items = [
     { id: 1, name: "خانه", href: "/", slug: "/" },
     { id: 2, name: "قایق ها", href: "/boats", slug: "/boats" },
-    { id: 3, name: "تماس با ما", href: "/contact", slug: "/contact" },
+    { id: 3, name: "تماس با ما", href: "/", slug: "/call" },
   ];
   return (
     <div className="hidden lg:flex items-center gap-5">

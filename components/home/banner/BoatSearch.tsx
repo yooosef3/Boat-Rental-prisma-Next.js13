@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "../../Button";
-import { CiSearch } from "react-icons/ci";
 import Guests from "./Guests";
 import React from "react";
 import Select from "./Select";

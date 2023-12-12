@@ -36,8 +36,8 @@ const cards = [
 const Services = () => {
   return (
     <div className="grid gap-10 grid-cols-1 md:grid-cols-2 section bg-[#F4EBE4]">
-      {cards.map((service) => (
-        <ServiceCard key={service.id} {...service} />
+      {cards.map((service, i) => (
+        <ServiceCard key={service.id} index={i} {...service} />
       ))}
     </div>
   );

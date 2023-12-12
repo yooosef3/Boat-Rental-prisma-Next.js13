@@ -2,7 +2,10 @@
 
 import Button from "../../Button";
 import React from "react";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "@/libs/motion";
 import { useForm } from "react-hook-form";
+import { useInView } from "react-intersection-observer";
 
 export default function Form() {
   const {
@@ -13,8 +16,17 @@ export default function Form() {
   const onSubmit = (data: any) => console.log(data);
 
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <motion.form
+      ref={ref}
+      initial="hidden"
+      variants={slideInFromBottom}
+      animate={inView ? "visible" : "hidden"}
+      custom={1}
+      transition={{ delay: 1, duration: 1 }} onSubmit={handleSubmit(onSubmit)}>
       <div className="md:flex gap-5">
         <div className="flex flex-1 flex-col">
           <label className="text-[#D1BFA8] bold">نام</label>
@@ -64,6 +76,6 @@ export default function Form() {
         />
       </div>
       <Button label="ارسال ایمیل" onClick={() => {}} />
-    </form>
+    </motion.form>
   );
 }
