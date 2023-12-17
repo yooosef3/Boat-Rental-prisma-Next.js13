@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useCallback, useState } from "react";
-import { SafeListing, SafeUser } from "@/app/types";
 
 import ListingItem from "../ListingItem";
+import { SafeListing } from "@/app/types";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 interface FavoritesProps {
   favorites: SafeListing[];
-  currentUser?: SafeUser | null;
+  currentUser?: any;
 }
 const FavoritesList: React.FC<FavoritesProps> = ({
   currentUser,
