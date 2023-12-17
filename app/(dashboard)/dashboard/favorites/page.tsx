@@ -4,7 +4,7 @@ import getCurrentUser from '@/app/actions/getCurrentUser';
 import getFavoriteListings from '@/app/actions/getFavoriteListings';
 
 const Favorites = async () => {
-    const currentUser = getCurrentUser();
+    const currentUser:any = getCurrentUser();
     if(!currentUser){
         <>
         <h3 className="text-gray-800 text-xl bold m-4">رزرو شده</h3>
