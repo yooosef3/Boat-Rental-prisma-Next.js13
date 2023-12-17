@@ -1,4 +1,3 @@
-import FavoriteItem from '@/components/dashboard/favorites/FavoriteItem';
 import FavoritesList from '@/components/dashboard/favorites/FavoritesList';
 import React from 'react';
 import getCurrentUser from '@/app/actions/getCurrentUser';
