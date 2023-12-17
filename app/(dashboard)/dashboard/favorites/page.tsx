@@ -4,7 +4,7 @@ import getCurrentUser from '@/app/actions/getCurrentUser';
 import getFavoriteListings from '@/app/actions/getFavoriteListings';
 
 const Favorites = async () => {
-    const currentUser = getCurrentUser();
+    const currentUser = await getCurrentUser();
     if(!currentUser){
         <>
         <h3 className="text-gray-800 text-xl bold m-4">رزرو شده</h3>
@@ -27,7 +27,6 @@ const Favorites = async () => {
             </>
           );
     }
-    //@ts-ignore
     return <FavoritesList currentUser={currentUser} favorites={favorites} />;
 };
 
