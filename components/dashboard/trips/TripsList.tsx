@@ -35,7 +35,7 @@ const TripsList: React.FC<TripsProps> = ({ reservations, currentUser }) => {
   );
   useEffect(() => {
     router.refresh();
-  }, [reservations.length]);
+  }, [reservations.length, router]);
   return (
     <div>
       <h3 className="text-gray-800 text-xl bold m-4">سفرهای من</h3>

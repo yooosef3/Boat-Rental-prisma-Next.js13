@@ -1,3 +1,5 @@
+import getListings, { IListingsParams } from "../actions/getListings";
+
 import About from "../../components/home/about/About";
 import Articles from "../../components/home/articles/Articles";
 import Banner from "../../components/home/banner/Banner";
@@ -9,15 +11,17 @@ import Holiday from "../../components/home/holiday/Holiday";
 import Reviews from "../../components/home/reviews/Reviews";
 import Services from "../../components/home/ourService/Services";
 import getCurrentUser from "../actions/getCurrentUser";
-import getListings from "../actions/getListings";
 
-export default async function Home() {
-  const listings = await getListings();
+interface HomeProps {
+  searchParams: IListingsParams;
+}
+export default async function Home({ searchParams }: HomeProps) {
+  const listings = await getListings(searchParams);
   const currentUser = getCurrentUser();
   return (
     <>
       <Banner />
-      <BoatsList boats={listings} currentUser={currentUser}/>
+      <BoatsList boats={listings} currentUser={currentUser} />
       <Services />
       <Holiday />
       <About />

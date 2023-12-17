@@ -13,7 +13,7 @@ interface DatePickerProps {
 const DatePicker: React.FC<DatePickerProps> = ({
   value,
   onChange,
-  disabledDates,
+  disabledDates
 }) => {
   return (
     <div dir="ltr">

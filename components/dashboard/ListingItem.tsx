@@ -6,7 +6,10 @@ import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { format } from "date-fns";
+import { motion } from "framer-motion";
+import { slideInFromBottom } from "@/libs/motion";
 import useCountries from "@/hooks/useCountries";
+import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/navigation";
 
 interface ListingItemProps {
@@ -62,8 +65,17 @@ const ListingItem: React.FC<ListingItemProps> = ({
     return `${format(start, "PP")} - ${format(end, "PP")}`;
   }, [reservation]);
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
   return (
-    <div onClick={()=> router.push(`/boats/${data.id}`)} className="bg-gray-100 p-3 w-[285px] md:w-[288px] rounded-md border">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      variants={slideInFromBottom}
+      animate={inView ? "visible" : "hidden"}
+      custom={1}
+      transition={{ delay: 0, duration: 1 }} onClick={()=> router.push(`/boats/${data.id}`)} className="bg-gray-100 p-3 w-[285px] md:w-[288px] rounded-md border">
       <div className="w-full h-44 relative overflow-hidden rounded-md">
         <Image
           alt="listing"
@@ -85,7 +97,7 @@ const ListingItem: React.FC<ListingItemProps> = ({
         </div>
         <Button label={actionLabel} onClick={handleCancel} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
