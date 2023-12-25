@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 const Login = () => {
   const path = usePathname();
-  const { navbar } = useContext(NavbarContext);
+  const { navbar } = useContext<any>(NavbarContext);
   const { onOpen, isOpen } = useLoginModal();
   useEffect(() => {
     if (isOpen) {

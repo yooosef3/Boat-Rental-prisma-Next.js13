@@ -52,7 +52,10 @@ const Slider = () => {
   return (
     <div className="mx-auto xl:w-[70%]">
       <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider h-[60vh] shadow-lg rounded-xl w-full">
+        <div
+          ref={sliderRef}
+          className="keen-slider h-[60vh] shadow-lg rounded-xl w-full"
+        >
           {reviews.map((review) => (
             <Slide key={review.id} {...review} />
           ))}
@@ -82,6 +85,7 @@ const Slider = () => {
       {loaded && instanceRef.current && (
         <div className="dots">
           {[
+            //@ts-ignore
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
             return (

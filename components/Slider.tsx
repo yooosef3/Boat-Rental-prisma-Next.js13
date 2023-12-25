@@ -76,7 +76,7 @@ export default function Slider({
           <div className="flex items-center bg-[#b18f6b] px-2 pt-1 rounded-md text-white">
             <div>شب/</div>
             <div className="text-lg medium">
-              {price.toLocaleString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d])}
+              {price.toLocaleString().replace(/\d/g, (d:any | string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])}
             </div>
             <h4>دلار</h4>
           </div>

@@ -28,7 +28,7 @@ const Reserve = () => {
   const { price, id, guestCount }: any = useContext(ListingContext);
   const loginModal = useLoginModal();
   const router = useRouter();
-  const { reservations, currentUser } = useContext(ReservationContext);
+  const { reservations, currentUser }:any = useContext(ReservationContext);
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
 
@@ -91,6 +91,7 @@ const Reserve = () => {
         هر شب{" "}
         {price
           .toLocaleString()
+          //@ts-ignore
           .replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])}{" "}
         دلار
       </h3>
@@ -102,14 +103,16 @@ const Reserve = () => {
         <Calendar
           value={dateRange}
           disabledDates={disabledDates}
+          //@ts-ignore
           onChange={(value) => setDateRange(value.selection)}
-        />
+          />
         <Button label="رزرو" onClick={onCreateReservation} />
         <div className="p-4 my-4 h-14 w-full bg-white shadow-sm rounded-md flex items-center justify-between border">
           <h3 className="text-gray-500">قیمت کل:</h3>
           <h3 className="text-gray-700 bold">
             {totalPrice
               .toLocaleString()
+              //@ts-ignore
               .replace(/\d/g, (d: string | number) => "۰۱۲۳۴۵۶۷۸۹"[d])}{" "}
             دلار
           </h3>

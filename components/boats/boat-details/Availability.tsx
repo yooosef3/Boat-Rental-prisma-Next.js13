@@ -13,10 +13,11 @@ const initialDateRange = {
   key: "selection",
 };
 const Availability = () => {
-  const { price, id, guestCount }: any = useContext(ListingContext);
+  const { price }: any = useContext(ListingContext);
 
   const router = useRouter();
-  const { reservations, currentUser } = useContext(ReservationContext);
+  //@ts-ignore
+  const { reservations } = useContext(ReservationContext);
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
 
@@ -54,6 +55,7 @@ const Availability = () => {
         <Calendar
           value={dateRange}
           disabledDates={disabledDates}
+          //@ts-ignore
           onChange={(value) => setDateRange(value.selection)}
         />
       </div>

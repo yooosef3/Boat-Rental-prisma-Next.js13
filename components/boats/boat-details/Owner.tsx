@@ -6,7 +6,7 @@ import React from "react";
 import { SafeUser } from "@/app/types";
 
 interface ListingInfoProps {
-  user: SafeUser | null;
+  user: SafeUser | any;
 }
 const Owner: React.FC<ListingInfoProps> = ({ user }) => {
   if (!user) return null;

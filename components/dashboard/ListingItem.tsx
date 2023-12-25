@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 
 interface ListingItemProps {
   data: SafeListing;
-  reservation?: SafeReservation;
+  reservation?: SafeReservation | null;
   onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;
@@ -59,7 +59,9 @@ const ListingItem: React.FC<ListingItemProps> = ({
       return null;
     }
 
+    //@ts-ignore
     const start = new Date(reservation.startDate);
+    //@ts-ignore
     const end = new Date(reservation.endDate);
 
     return `${format(start, "PP")} - ${format(end, "PP")}`;
@@ -91,7 +93,7 @@ const ListingItem: React.FC<ListingItemProps> = ({
         <h2 className="medium text-gray-400 my-2">{reservationDate}</h2>
         <div className="flex flex-row items-center gap-1 mb-3">
           <div className="bold">
-            {price.toLocaleString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d])} دلار
+            {price.toLocaleString().replace(/\d/g, (d:string | number | any) => "۰۱۲۳۴۵۶۷۸۹"[d])} دلار
           </div>
           {!reservation && <div className="medium">هرشب</div>}
         </div>

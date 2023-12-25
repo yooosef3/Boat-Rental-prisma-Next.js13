@@ -43,6 +43,7 @@ const ReservationsList: React.FC<ReservationsProps> = ({
         {reservations.map((reservation): any => (
           <ListingItem
             key={reservation.id}
+            //@ts-ignore
             data={reservation.listing}
             reservation={reservation}
             actionId={reservation.id}

@@ -19,6 +19,7 @@ const BoatDetails = async ({ params }: { params: IParams }) => {
     <div className="pt-[90px]">
       <Album image={listing?.imageSrc} />
       <Details
+        //@ts-ignore
         listing={listing}
         reservations={reservations}
         currentUser={currentUser}

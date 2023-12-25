@@ -9,7 +9,7 @@ import useRegisterModal from "@/hooks/useRegisterModal";
 
 const SignUp = () => {
   const path = usePathname();
-  const { navbar } = useContext(NavbarContext);
+  const { navbar } = useContext<any>(NavbarContext);
   const { onOpen, isOpen } = useRegisterModal();
   useEffect(() => {
     if (isOpen) {

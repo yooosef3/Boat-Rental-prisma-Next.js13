@@ -7,7 +7,7 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { useRouter } from "next/navigation";
 
 const BoatSubmit = () => {
-  const { currentUser } = useContext(NavbarContext);
+  const { currentUser }:any = useContext(NavbarContext);
   const loginModal = useLoginModal();
   const router = useRouter();
   const rentHandler = useCallback(() => {

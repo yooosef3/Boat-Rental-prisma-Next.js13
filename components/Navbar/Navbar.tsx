@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 interface NavbarProps {
   currentUser?: SafeUser | null;
 }
-export const NavbarContext = createContext();
+export const NavbarContext = createContext({});
 const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
   const path = usePathname();
   const [navbar, setNavbar] = useState<boolean>(false);

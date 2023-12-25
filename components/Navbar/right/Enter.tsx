@@ -10,7 +10,7 @@ import { NavbarContext } from "../Navbar";
 import SignUp from "./SignUp";
 
 const Enter = () => {
-  const { currentUser } = useContext(NavbarContext);
+  const { currentUser } = useContext<any>(NavbarContext);
   const [toggle, setToggle] = useState(false);
   return (
     <div className="hidden lg:flex items-center gap-8">

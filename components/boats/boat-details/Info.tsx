@@ -14,7 +14,7 @@ const Map = dynamic(() => import("../../../components/Map"), {
   ssr: false,
 });
 const Info = () => {
-  const { locationValue } = useContext(ListingContext);
+  const { locationValue }:any = useContext(ListingContext);
   const { getByValue } = useCountries();
   const coordinates = getByValue(locationValue)?.latlng;
 

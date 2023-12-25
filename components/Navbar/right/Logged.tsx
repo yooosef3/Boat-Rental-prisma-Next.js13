@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 
 interface LoggedProps {
   toggle: boolean;
-  setToggle: any;
+  setToggle?: any;
 }
 const Logged = ({ toggle, setToggle }: LoggedProps) => {
   return (

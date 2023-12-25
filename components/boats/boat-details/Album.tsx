@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import album1 from "../../../public/images/boat/yacht1.jpeg";
 import album2 from "../../../public/images/boat/yacht8-1170x690.jpeg";
 import album3 from "../../../public/images/boat/yacht_interior_3-1.jpeg";
 import album4 from "../../../public/images/boat/yacht_interior_4-1.jpeg";
